@@ -31,7 +31,7 @@ const ContactBooking = () => {
   };
 
   return (
-    <section className="bookingWrap">
+    <section id="contact-booking" className="bookingWrap">
       <div className="bookingCard">
         <h2 className="bookingTitle">Ready to book?</h2>
         <p className="bookingSubtitle">Fill out the form below and we'll get back to you within 24 hours</p>

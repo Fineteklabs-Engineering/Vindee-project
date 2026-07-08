@@ -44,7 +44,14 @@ const HeroSection = () => {
           High-energy, raw, and authentic multi-hour broadcasts exploring
           street culture, food, and high-profile collabs across the globe.
         </p>
-        <button className="cta">BOOK VINDEE</button>
+        <button
+      className="cta"
+      onClick={() => {
+    document.getElementById('contact-booking')?.scrollIntoView({ behavior: 'smooth' });
+  }}
+>
+  BOOK VINDEE
+</button>
       </div>
 
       {/*<img src="/images/vindee-image1.png" alt="Vindee Official" className="portrait" />  */}
