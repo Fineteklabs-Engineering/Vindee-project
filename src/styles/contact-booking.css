@@ -1,0 +1,133 @@
+/* contact-booking.css */
+.bookingWrap {
+  width: 100%;
+ background: #ffffff;
+  padding: 5rem 5rem;
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bookingCard {
+  width: 100%;
+  max-width: 560px;
+   background: #F5F3EF;
+  
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 2.75rem;
+}
+
+.bookingTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0A0A0A;
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+
+.bookingSubtitle {
+  font-size: 0.9rem;
+  color: #6b6b6b;
+  text-align: center;
+  margin: 0 0 2.25rem;
+}
+
+.bookingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bookingRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.bookingField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bookingLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0A0A0A;
+}
+
+.bookingInput,
+.bookingTextarea {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  color: #0A0A0A;
+  transition: border-color 0.2s ease;
+}
+
+.bookingInput:focus,
+.bookingTextarea:focus {
+  outline: none;
+  border-color: #E8590C;
+}
+
+.bookingTextarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.bookingSubmit {
+  width: 100%;
+  background: linear-gradient(90deg, #E8590C, #F2A20C);
+  color: #0A0A0A;
+  border: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bookingSubmit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 89, 12, 0.35);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .bookingWrap {
+    padding: 3.5rem 2rem;
+  }
+
+  .bookingCard {
+    padding: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .bookingWrap {
+    padding: 3rem 1.25rem;
+  }
+
+  .bookingCard {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .bookingRow {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .bookingTitle {
+    font-size: 1.35rem;
+  }
+}
