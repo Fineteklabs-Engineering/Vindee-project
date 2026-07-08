@@ -83,4 +83,8 @@
   .partnerLogo {
     font-size: 0.95rem;
   }
+    .partnerIcon {
+    height: 60px;
+    width: 60px;
+  }
 }
