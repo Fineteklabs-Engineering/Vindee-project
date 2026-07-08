@@ -23,7 +23,11 @@ const HeroSection = () => {
       <div className="overlay" />
 
       <header className={`navbar ${scrolled ? 'navbarScrolled' : ''}`}>
-        <img src="/images/vindiee-logo.png" alt="Vindee Official" className="logo" />
+          <img
+    src={scrolled ? '/images/vindee-logo2.png' : '/images/vindiee-logo.png'}
+    alt="Vindee Official"
+    className="logo"
+  />
         <button
           className={`menuBtn ${menuOpen ? 'open' : ''} ${scrolled ? 'menuBtnScrolled' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
