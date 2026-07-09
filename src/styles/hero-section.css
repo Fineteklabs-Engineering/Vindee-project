@@ -267,6 +267,7 @@
 @media (max-width: 560px) {
   .hero {
     min-height: 100svh;
+   
   }
 
   .navbar {

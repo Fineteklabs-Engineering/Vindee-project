@@ -1,7 +1,7 @@
 /* stats-bar.css */
 .statsBar {
   width: 100%;
-  background: #141414;
+   background: #1F1F1F;
   padding: 3rem 5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);

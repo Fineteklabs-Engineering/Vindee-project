@@ -19,7 +19,10 @@ const HeroSection = () => {
 
   return (
     <section className="hero">
-      <img src="/images/vindee-image3.jpeg" alt="" className="bgImage" />
+      <picture>
+  <source media="(max-width: 560px)" srcSet="/images/vindee-mobile-photo3.jpg" />
+  <img src="/images/vindee-hero-photo2.jpg" alt="" className="bgImage" />
+</picture>
       <div className="overlay" />
 
       <header className={`navbar ${scrolled ? 'navbarScrolled' : ''}`}>

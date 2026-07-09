@@ -1,6 +1,8 @@
 /* career-highlights.css */
 .highlightsWrap {
   width: 100%;
+  
+
   background: #ffffff;
   padding: 5rem 5rem;
   text-align: center;
@@ -99,7 +101,42 @@
 .highlightImageActive {
   opacity: 1;
 }
+@media screen and (min-width: 1440px) {
+  .highlightsWrap {
+    padding: 6rem 8rem;
+  }
 
+  .highlightsEyebrow {
+    font-size: 0.95rem;
+  }
+
+  .highlightsTitle {
+    font-size: 3rem;
+    margin: 0 0 4rem;
+  }
+
+  .highlightsGrid {
+    max-width: 1400px;
+    gap: 2rem;
+  }
+
+  .highlightCard {
+    padding: 2.25rem;
+  }
+
+  .highlightCardTitle {
+    font-size: 1.15rem;
+  }
+
+  .highlightCardDesc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .highlightImageWrap {
+    min-height: 380px;
+  }
+}
 /* Tablet */
 @media (max-width: 900px) {
   .highlightsWrap {
