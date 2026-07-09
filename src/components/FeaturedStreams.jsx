@@ -7,7 +7,7 @@ const streams = [
   {
     title: 'IRL Stream ft. Prezzo El Presidente',
     description: 'Prezzo gifts Vindee a custom bulletproof vest live, honoring his street streaming grit.',
-    image: '/images/vindee-prezo.png',
+    image: '/images/vindee-prezo3.png',
     link: '#',
     category: 'Celebrity',
   },
