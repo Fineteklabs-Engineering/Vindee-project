@@ -112,7 +112,20 @@
   padding: 0 5rem;
   max-width: 640px;
 }
-
+.vindeeName {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  background: linear-gradient(90deg, #E8590C, #F2A20C);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0 0 0.5rem;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease forwards;
+  animation-delay: 0.05s;
+  transform: rotate(-2deg);
+  display: inline-block;
+}
 .headline {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 700;

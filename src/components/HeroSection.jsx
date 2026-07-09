@@ -43,23 +43,24 @@ const HeroSection = () => {
         </button>
       </header>
 
-      <div className="content">
-        <h1 className="headline">
-          THE FACE OF<br />KENYAN IRL LIVE
-        </h1>
-        <p className="subtext">
-          High-energy, raw, and authentic multi-hour broadcasts exploring
-          street culture, food, and high-profile collabs across the globe.
-        </p>
-        <button
-      className="cta"
-      onClick={() => {
-    document.getElementById('contact-booking')?.scrollIntoView({ behavior: 'smooth' });
-  }}
->
-  BOOK VINDEE
-</button>
-      </div>
+   <div className="content">
+  <p className="vindeeName">Vindee</p>
+  <h1 className="headline">
+    THE FACE OF<br />KENYAN IRL LIVE
+  </h1>
+  <p className="subtext">
+    High-energy, raw, and authentic multi-hour broadcasts exploring
+    street culture, food, and high-profile collabs across the globe.
+  </p>
+  <button
+    className="cta"
+    onClick={() => {
+      document.getElementById('contact-booking')?.scrollIntoView({ behavior: 'smooth' });
+    }}
+  >
+    BOOK VINDEE
+  </button>
+</div>
 
       {/*<img src="/images/vindee-image1.png" alt="Vindee Official" className="portrait" />  */}
 
