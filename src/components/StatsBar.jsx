@@ -1,4 +1,4 @@
-// StatsBar.jsx
+
 import { useEffect, useRef, useState } from 'react';
 import '../styles/stats-bar.css'
 

@@ -1,4 +1,4 @@
-// ContactBooking.jsx
+
 import { useState } from 'react';
 import '../styles/contact-booking.css'
 
@@ -26,7 +26,7 @@ const ContactBooking = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Wire this up to your actual booking endpoint/email service
+
     console.log('Booking request:', formData);
   };
 
