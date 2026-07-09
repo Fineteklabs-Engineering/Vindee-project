@@ -89,8 +89,8 @@
 .aboutPhoto {
   position: absolute;
   bottom: 0;
-  left: 60px;
-  height: 92%;
+  left: 150px;
+  height: 94%;
   width: auto;
   object-fit: contain;
   z-index: 3;
