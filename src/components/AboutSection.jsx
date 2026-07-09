@@ -14,7 +14,7 @@ const AboutSection = () => {
           <p className="aboutBlockKicker">the face of</p>
           <p className="aboutBlockTitle">IRL LIVE<br />with Vindee</p>
         </div>
-        <img src="/images/vindee-image4.png" alt="Vindee Official" className="aboutPhoto" />
+        <img src="/images/vindee-shouting.png" alt="Vindee Official" className="aboutPhoto" />
       </div>
 
       <div className="aboutContent">
