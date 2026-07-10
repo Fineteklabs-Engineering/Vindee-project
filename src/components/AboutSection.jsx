@@ -18,7 +18,7 @@ const AboutSection = () => {
       </div>
 
       <div className="aboutContent">
-        <p className="aboutEyebrow">— ABOUT VINDEE</p>
+        <p className="aboutEyebrow"> ABOUT VINDEE</p>
         <p className="aboutHeadline">
            From viral street pranks to pioneering IRL livestreaming in East
   Africa. Ranked 3rd Most Influential Streamer in Africa, elevating

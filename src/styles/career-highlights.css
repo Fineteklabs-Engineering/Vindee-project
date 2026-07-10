@@ -1,143 +1,290 @@
-/* career-highlights.css */
 .highlightsWrap {
   width: 100%;
-  
-
-  background: #ffffff;
-  padding: 5rem 5rem;
+  background: #F5F3EF;
+  padding: 4rem 3rem;
   text-align: center;
   font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle dot-grid texture */
+.highlightsWrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(10, 10, 10, 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
 }
 
 .highlightsEyebrow {
+  position: relative;
+  z-index: 1;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  color: #6b6b6b;
+  color: #E8590C;
   margin: 0 0 0.75rem;
 }
 
 .highlightsTitle {
-  
+  position: relative;
+  z-index: 1;
   font-size: clamp(1.6rem, 2.8vw, 2.4rem);
   font-weight: 700;
   color: #0A0A0A;
+
   margin: 0 0 3rem;
 }
 
 .highlightsGrid {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    "card0 image card1"
-    "card2 image card3";
-  gap: 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.1rem;
+  max-width: 950px;
+  margin: 0 auto 2rem;
+  text-align: left;
   align-items: stretch;
 }
 
-.card-0 { grid-area: card0; }
-.card-1 { grid-area: card1; }
-.card-2 { grid-area: card2; }
-.card-3 { grid-area: card3; }
-
-.highlightCard {
-  background: none;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-  padding: 1.75rem;
-  text-align: left;
-  cursor: pointer;
-  transition: border-color 0.25s ease, background 0.25s ease;
+/* Main card (left) */
+.highlightMainCard {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
 }
 
-.highlightCard:hover {
-  background: rgba(232, 89, 12, 0.04);
+.highlightMainImageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9.5;
+  overflow: hidden;
 }
 
-.highlightCardActive {
-  border-color: #E8590C;
-  background: rgba(232, 89, 12, 0.06);
+.highlightMainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: highlightFadeIn 0.6s ease;
 }
 
-.highlightCardTitle {
-  font-size: 1rem;
+@keyframes highlightFadeIn {
+  from { opacity: 0; transform: scale(1.03); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.highlightCounter {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+  color: #E8590C;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+.highlightBadge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  background: linear-gradient(90deg, #E8590C, #F2A20C);
+  color: #0A0A0A;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+}
+
+.highlightMainBody {
+  padding: 1.25rem 1.5rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.highlightMainTitle {
+  font-size: 1.15rem;
   font-weight: 700;
   color: #0A0A0A;
-  margin: 0 0 0.6rem;
-  transition: color 0.25s ease;
+  margin: 0 0 0.5rem;
 }
 
-.highlightCardActive .highlightCardTitle {
-  color: #E8590C;
-}
-
-.highlightCardDesc {
+.highlightMainDesc {
   font-size: 0.85rem;
   line-height: 1.55;
   color: #6b6b6b;
-  margin: 0;
+  margin: 0 0 1rem;
+  max-width: 480px;
+  flex: 1;
 }
 
-.highlightImageWrap {
-  grid-area: image;
+.highlightMainCta {
+  align-self: flex-start;
+  background: none;
+  border: 1.5px solid #E8590C;
+  color: #E8590C;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.highlightMainCta:hover {
+  background: #E8590C;
+  color: #ffffff;
+}
+
+/* Thumbnail column (right) */
+.highlightThumbCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.highlightThumb {
   position: relative;
-  border-radius: 12px;
+  border: none;
+  border-radius: 14px;
   overflow: hidden;
-  min-height: 280px;
+  cursor: pointer;
+  padding: 0;
 }
 
-.highlightImage {
+.highlightThumbTop {
+  flex: 1.15;
+  min-height: 140px;
+}
+
+.highlightThumbRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+  flex: 1;
+}
+
+.highlightThumbSmall {
+  min-height: 110px;
+}
+
+.highlightThumbImage {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: transform 0.4s ease;
 }
 
-.highlightImageActive {
-  opacity: 1;
+.highlightThumb:hover .highlightThumbImage {
+  transform: scale(1.06);
 }
+
+.highlightThumbOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 30%, rgba(0,0,0,0.7) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  text-align: left;
+}
+
+.highlightThumbTag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #F2A20C;
+  margin: 0 0 0.2rem;
+}
+
+.highlightThumbTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.highlightThumbNumber {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.85);
+  color: #0A0A0A;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dots (carousel indicators) */
+.highlightDots {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.highlightDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.15);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.highlightDotActive {
+  background: #E8590C;
+  transform: scale(1.3);
+}
+
+/* Desktop 1440+ */
 @media screen and (min-width: 1440px) {
   .highlightsWrap {
-    padding: 6rem 8rem;
-  }
-
-  .highlightsEyebrow {
-    font-size: 0.95rem;
-  }
-
-  .highlightsTitle {
-    font-size: 3rem;
-    margin: 0 0 4rem;
+    padding: 5rem 5rem;
   }
 
   .highlightsGrid {
-    max-width: 1400px;
-    gap: 2rem;
+    max-width: 1100px;
+    gap: 1.5rem;
   }
 
-  .highlightCard {
-    padding: 2.25rem;
+  .highlightMainBody {
+    padding: 1.75rem 2rem 2rem;
   }
 
-  .highlightCardTitle {
-    font-size: 1.15rem;
+  .highlightMainTitle {
+    font-size: 1.4rem;
   }
 
-  .highlightCardDesc {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .highlightImageWrap {
-    min-height: 380px;
+  .highlightMainDesc {
+    font-size: 0.9rem;
   }
 }
+
 /* Tablet */
 @media (max-width: 900px) {
   .highlightsWrap {
@@ -146,30 +293,42 @@
 
   .highlightsGrid {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "image"
-      "card0"
-      "card1"
-      "card2"
-      "card3";
   }
 
-  .highlightImageWrap {
-    min-height: 240px;
+  .highlightThumbCol {
+    flex-direction: column;
   }
 }
 
-/* Mobile */
+/* Mobile — only the main card shows, thumbnails hidden, dots control rotation */
 @media (max-width: 560px) {
   .highlightsWrap {
     padding: 3rem 1.25rem;
   }
 
-  .highlightCard {
-    padding: 1.25rem;
+  .highlightsGrid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 0;
   }
 
-  .highlightImageWrap {
-    min-height: 200px;
+  .highlightThumbCol {
+    display: none;
+  }
+
+  .highlightMainBody {
+    padding: 1.5rem;
+  }
+
+  .highlightMainTitle {
+    font-size: 1.25rem;
+  }
+
+  .highlightMainDesc {
+    font-size: 0.85rem;
+  }
+
+  .highlightDots {
+    margin-top: 0.5rem;
   }
 }

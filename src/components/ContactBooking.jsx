@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import '../styles/contact-booking.css'
 
@@ -32,6 +31,8 @@ const ContactBooking = () => {
 
   return (
     <section id="contact-booking" className="bookingWrap">
+      <div className="bookingOverlay" />
+
       <div className="bookingCard">
         <h2 className="bookingTitle">Ready to book?</h2>
         <p className="bookingSubtitle">Fill out the form below and we'll get back to you within 24 hours</p>

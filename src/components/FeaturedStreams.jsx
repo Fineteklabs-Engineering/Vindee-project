@@ -1,3 +1,4 @@
+// FeaturedStreams.jsx
 import { useEffect, useRef, useState } from 'react';
 import '../styles/featured-streams.css';
 
@@ -48,26 +49,41 @@ const streams = [
   },
 ];
 
+const AUTO_ROTATE_MS = 5000;
+
 const FeaturedStreams = () => {
   const [activeCategory, setActiveCategory] = useState('All');
-  const [inView, setInView] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setInView(entry.isIntersecting),
-      { threshold: 0.15 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const timerRef = useRef(null);
 
   const filteredStreams = activeCategory === 'All'
     ? streams
     : streams.filter((stream) => stream.category === activeCategory);
 
+  const startTimer = (count) => {
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % count);
+    }, AUTO_ROTATE_MS);
+  };
+
+  useEffect(() => {
+    startTimer(filteredStreams.length);
+    return () => clearInterval(timerRef.current);
+  }, [filteredStreams.length]);
+
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+    setActiveIndex(0);
+  };
+
+  const handleDotSelect = (index) => {
+    setActiveIndex(index);
+    startTimer(filteredStreams.length);
+  };
+
   return (
-    <section className="streamsWrap" ref={sectionRef}>
+    <section className="streamsWrap">
       <p className="streamsEyebrow">Featured streams</p>
       <p className="streamsSubtitle">High-profile IRL broadcasts and celebrity collabs</p>
 
@@ -76,31 +92,48 @@ const FeaturedStreams = () => {
           <button
             key={category}
             className={`streamsTab ${activeCategory === category ? 'streamsTabActive' : ''}`}
-            onClick={() => setActiveCategory(category)}
+            onClick={() => handleCategoryChange(category)}
           >
             {category}
           </button>
         ))}
       </div>
 
-      <div className="streamsGrid">
+      <div className="streamsCarousel">
         {filteredStreams.map((stream, index) => (
           <div
-            className={`streamCard ${inView ? 'streamCardVisible' : ''}`}
+            className={`streamsSlide ${index === activeIndex ? 'streamsSlideActive' : ''}`}
             key={stream.title}
-            style={{ transitionDelay: `${index * 0.08}s` }}
           >
-            <div className="streamImageWrap">
-              <img src={stream.image} alt={stream.title} className="streamImage" />
-              <a href={stream.link} className="streamLinkBtn" aria-label={`Watch ${stream.title}`}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M7 17L17 7M17 7H8M17 7V16" />
-                </svg>
-              </a>
+            <img src={stream.image} alt={stream.title} className="streamsSlideImage" />
+            <div className="streamsSlideOverlay" />
+
+            <span className="streamsCategoryTag">{stream.category}</span>
+
+            <div className="streamsContentCard">
+              <h3 className="streamsSlideTitle">{stream.title}</h3>
+              <p className="streamsSlideDescription">{stream.description}</p>
             </div>
-            <p className="streamTitle">{stream.title}</p>
-            <p className="streamDescription">{stream.description}</p>
+
+            <p className="streamsSlideCaption">{stream.category}</p>
+
+            <a href={stream.link} className="streamsLinkBtn" aria-label={`Watch ${stream.title}`}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M7 17L17 7M17 7H8M17 7V16" />
+              </svg>
+            </a>
           </div>
+        ))}
+      </div>
+
+      <div className="streamsDots">
+        {filteredStreams.map((stream, index) => (
+          <button
+            key={stream.title}
+            className={`streamsDot ${activeIndex === index ? 'streamsDotActive' : ''}`}
+            onClick={() => handleDotSelect(index)}
+            aria-label={`Go to ${stream.title}`}
+          />
         ))}
       </div>
     </section>

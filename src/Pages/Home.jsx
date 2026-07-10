@@ -8,18 +8,23 @@ import HeroSection from '../components/HeroSection';
 import StatsBar from '../components/StatsBar';
 import Footer from '../components/Footer';
 
+
 const Home = () => {
   return (
     <>
-      <HeroSection />
+      <HeroSection /> 
+      
+     
      
       <AboutSection />
-      <StatsBar />
+     
       <CareerHighlights />
       <FeaturedStreams />
+      
       <BrandPartnerships />
-      <ArchiveSection />
       <ContactBooking />
+      <ArchiveSection />
+      
       <Footer />
     </>
   );

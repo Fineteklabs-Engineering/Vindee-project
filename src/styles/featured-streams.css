@@ -1,26 +1,56 @@
 /* featured-streams.css */
 .streamsWrap {
   width: 100%;
-  background: #F5F3EF;
+  background: #17140F;
   padding: 5rem 5rem;
   text-align: center;
   font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.streamsWrap::before {
+  content: '';
+  position: absolute;
+  top: -140px;
+  left: -100px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(242, 196, 12, 0.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.streamsWrap::after {
+  content: '';
+  position: absolute;
+  bottom: -160px;
+  right: -100px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(232, 89, 12, 0.12) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .streamsEyebrow {
+  position: relative;
+  z-index: 1;
   font-size: clamp(1.6rem, 2.8vw, 2.4rem);
   font-weight: 700;
-  color: #0A0A0A;
+  color: #F5F5F5;
   margin: 0 0 0.75rem;
 }
 
 .streamsSubtitle {
+  position: relative;
+  z-index: 1;
   font-size: 0.95rem;
-  color: #6b6b6b;
+  color: #A8A29A;
   margin: 0 0 2.5rem;
 }
 
 .streamsTabs {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   gap: 0.75rem;
@@ -29,20 +59,20 @@
 }
 
 .streamsTab {
-  background: none;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 999px;
   padding: 0.6rem 1.5rem;
   font-size: 0.85rem;
   font-weight: 500;
-  color: #6b6b6b;
+  color: #C9C4BB;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .streamsTab:hover {
   border-color: #E8590C;
-  color: #E8590C;
+  color: #F2A20C;
 }
 
 .streamsTabActive {
@@ -52,81 +82,165 @@
   font-weight: 700;
 }
 
-.streamsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+/* ===== Carousel ===== */
+.streamsCarousel {
+  position: relative;
+  z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
-  text-align: left;
-}
-
-.streamCard {
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
-}
-
-.streamCardVisible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.streamImageWrap {
-  position: relative;
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
-  margin: 0 0 1.1rem;
- 
+  height: 560px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 }
 
-.streamImage {
+.streamsSlide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s ease;
+}
+
+.streamsSlideActive {
+  opacity: 1;
+  visibility: visible;
+}
+
+.streamsSlideImage {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  animation: streamSlideZoom 8s ease forwards;
 }
 
-.streamCard:hover .streamImage {
-  transform: scale(1.06);
+@keyframes streamSlideZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
 }
 
-.streamLinkBtn {
+.streamsSlideOverlay {
   position: absolute;
-  bottom: 12px;
-  right: 12px;
-  width: 40px;
-  height: 40px;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(10, 8, 6, 0.92) 0%, rgba(10, 8, 6, 0.55) 42%, rgba(10, 8, 6, 0.05) 68%),
+    linear-gradient(0deg, rgba(10, 8, 6, 0.85) 0%, rgba(10, 8, 6, 0) 30%);
+}
+
+.streamsCategoryTag {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 2;
+  background: rgba(23, 20, 15, 0.55);
+  backdrop-filter: blur(6px);
+  color: #F2A20C;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(242, 162, 12, 0.35);
+}
+
+.streamsContentCard {
+  position: absolute;
+  top: 50%;
+  left: 48px;
+  transform: translateY(-50%);
+  z-index: 2;
+  max-width: 420px;
+  text-align: left;
+}
+
+.streamsSlideTitle {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem;
+}
+
+.streamsSlideTitle::after {
+  content: '';
+  display: block;
+  width: 42px;
+  height: 2px;
+  background: linear-gradient(90deg, #E8590C, #F2A20C);
+  margin-top: 0.85rem;
+}
+
+.streamsSlideDescription {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #D8D3C9;
+  margin: 0;
+}
+
+.streamsSlideCaption {
+  position: absolute;
+  bottom: 28px;
+  left: 32px;
+  z-index: 2;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.streamsLinkBtn {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: #ffffff;
+  background: linear-gradient(90deg, #E8590C, #F2A20C);
   color: #0A0A0A;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  box-shadow: 0 4px 16px rgba(232, 89, 12, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.streamLinkBtn:hover {
+.streamsLinkBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 22px rgba(232, 89, 12, 0.55);
+}
+
+/* Dots — drive rotation, positioned bottom-right like the reference */
+.streamsDots {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+}
+
+.streamsDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.streamsDotActive {
   background: #E8590C;
-  color: #ffffff;
-}
-
-.streamTitle {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #0A0A0A;
-  margin: 0 0 0.5rem;
-}
-
-.streamDescription {
-  font-size: 0.85rem;
-  line-height: 1.55;
-  color: #6b6b6b;
-  margin: 0;
+  transform: scale(1.35);
 }
 
 /* Tablet */
@@ -135,41 +249,56 @@
     padding: 3.5rem 2rem;
   }
 
-  .streamsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+  .streamsCarousel {
+    height: 480px;
+  }
+
+  .streamsContentCard {
+    left: 32px;
+    max-width: 320px;
   }
 }
 
 /* Mobile */
-/* Mobile */
 @media (max-width: 560px) {
   .streamsWrap {
-    padding: 3rem 0 3rem 1.25rem;
+    padding: 3rem 1.25rem;
   }
 
-  .streamsGrid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 1rem;
-    padding-right: 1.25rem;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  .streamsCarousel {
+    height: 460px;
+    border-radius: 16px;
   }
 
-  .streamsGrid::-webkit-scrollbar {
-    display: none;
+  .streamsContentCard {
+    left: 20px;
+    right: 20px;
+    max-width: none;
   }
 
-  .streamCard {
-    flex: 0 0 88%;
-    scroll-snap-align: start;
+  .streamsSlideTitle {
+    font-size: 1.4rem;
+  }
+
+  .streamsSlideDescription {
+    font-size: 0.85rem;
+  }
+
+  .streamsSlideCaption {
+    left: 20px;
+    bottom: 20px;
+    font-size: 0.95rem;
+  }
+
+  .streamsLinkBtn {
+    bottom: 20px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
   }
 
   .streamsTabs {
     gap: 0.5rem;
-    padding: 0 1.25rem;
   }
 
   .streamsTab {

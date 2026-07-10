@@ -44,11 +44,10 @@
   left: 8%;
   width: 130px;
   height: 130px;
-  background-image: radial-gradient(rgba(232, 89, 12, 0.35) 2px, transparent 2px);
+  background-image: radial-gradient(rgba(242, 196, 12, 0.4) 2px, transparent 2px);
   background-size: 14px 14px;
   z-index: 1;
 }
-
 .aboutSquareAccent {
   position: absolute;
   bottom: 8%;
@@ -69,6 +68,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  box-shadow: inset 0 3px 0 #F2C40C;
 }
 
 .aboutBlockKicker {
@@ -105,7 +105,6 @@
 }
 
 .aboutEyebrow {
-  
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -116,6 +115,13 @@
   margin: 0 0 1.5rem;
 }
 
+.aboutEyebrow::before {
+  content: '';
+  width: 18px;
+  height: 2px;
+  background: #F2C40C;
+  display: inline-block;
+}
 .aboutHeadline {
   
   font-size: clamp(1.6rem, 2.5vw, 2.4rem);

@@ -1,7 +1,7 @@
 
 .footerWrap {
   width: 100%;
-  background: radial-gradient(ellipse at 30% 40%, #262626 0%, #1a1a1a 65%); 
+  background: black; 
   padding: 4rem 8rem;
   display: grid;
   grid-template-columns: 1fr 1fr;

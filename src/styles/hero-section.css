@@ -282,14 +282,40 @@
   color: #0A0A0A;
 }
 
-/* Respect reduced motion preference */
+.vindeeName {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.vindeeSpark {
+  color: #F2C40C;
+  animation: sparkTwinkle 2.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes sparkTwinkle {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(0.85) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(15deg);
+  }
+}
+
+
+
+
 @media (prefers-reduced-motion: reduce) {
   .navbar,
   .headline,
   .subtext,
   .cta,
   .featuredWrap,
-  .bgImage {
+  .bgImage,
+  .vindeeSpark {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
