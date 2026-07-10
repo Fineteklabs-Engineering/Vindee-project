@@ -4,7 +4,7 @@
   background: #F5F3EF;
   padding: 4rem 3rem;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .statsBar::before {
@@ -32,88 +32,83 @@
 .statsInner {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.25rem;
   max-width: 1300px;
   margin: 0 auto;
 }
 
+/* the circle itself — small, fixed to viewport, stacked in a column */
 .statCard {
-  position: relative;
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 1.75rem 1.25rem;
+  position: fixed;
+  left: 24px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F2C40C, #F2A20C);
+  box-shadow: 0 6px 16px rgba(242, 162, 12, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  overflow: hidden;
+  padding: 0.35rem;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s ease;
+  pointer-events: none;
+  z-index: 40;
+  transition: opacity 0.6s ease;
+  animation: floatCircle 6s ease-in-out infinite;
 }
 
 .statCardVisible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 0.92;
 }
 
-.statCard:hover {
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
-  transform: translateY(-4px);
+/* stack vertically, evenly spaced down the left side */
+.statCard:nth-child(1) { top: 18%; animation-delay: 0s; }
+.statCard:nth-child(2) { top: 32%; animation-delay: 0.4s; }
+.statCard:nth-child(3) { top: 46%; animation-delay: 0.8s; }
+.statCard:nth-child(4) { top: 60%; animation-delay: 1.2s; }
+.statCard:nth-child(5) { top: 74%; animation-delay: 1.6s; }
+
+/* gentle floating bob */
+@keyframes floatCircle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .statAccent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, #E8590C, #F2A20C, #F2C40C);
+  display: none;
 }
 
 .statIcon {
-  position: relative;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(232, 89, 12, 0.1), rgba(242, 162, 12, 0.1));
-  color: #E8590C;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1rem;
+  margin-bottom: 0.15rem;
 }
 
-.statIcon::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #F2C40C;
-  box-shadow: 0 0 6px rgba(242, 196, 12, 0.7);
+.statIcon svg {
+  width: 13px;
+  height: 13px;
 }
 
 .statValue {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-size: 0.7rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #E8590C, #F2A20C);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin: 0 0 0.4rem;
+  color: #ffffff;
+  margin: 0 0 0.1rem;
+  line-height: 1;
 }
 
 .statLabel {
-  font-size: 0.72rem;
+  font-size: 0.38rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #6b6b6b;
   margin: 0;
+  line-height: 1.05;
 }
 
 /* Tablet */
@@ -122,42 +117,57 @@
     padding: 3rem 2rem;
   }
 
-  .statsInner {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+  .statCard {
+    width: 54px;
+    height: 54px;
+    left: 16px;
   }
 
-  .statCard {
-    padding: 1.5rem 1rem;
+  .statIcon svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .statValue {
+    font-size: 0.6rem;
+  }
+
+  .statLabel {
+    font-size: 0.34rem;
   }
 }
 
-/* Mobile */
+/* Mobile: column gets cramped on short viewports, so thin it out */
 @media (max-width: 560px) {
   .statsBar {
     padding: 2.5rem 1.25rem;
   }
 
-  .statsInner {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.85rem;
-  }
-
   .statCard {
-    padding: 1.25rem 0.85rem;
+    width: 44px;
+    height: 44px;
+    left: 10px;
   }
 
-  .statIcon {
-    width: 36px;
-    height: 36px;
-    margin-bottom: 0.75rem;
+  .statIcon svg {
+    width: 9px;
+    height: 9px;
   }
 
   .statValue {
-    font-size: 1.35rem;
+    font-size: 0.5rem;
   }
 
   .statLabel {
-    font-size: 0.65rem;
+    font-size: 0.28rem;
+  }
+
+  .statCard:nth-child(1) { top: 20%; }
+  .statCard:nth-child(2) { top: 36%; }
+  .statCard:nth-child(3) { top: 52%; }
+  .statCard:nth-child(4) { top: 68%; }
+  /* drop the 5th on very short screens to avoid crowding */
+  .statCard:nth-child(5) {
+    display: none;
   }
 }

@@ -20,7 +20,7 @@ const ArchiveSection = () => {
 
   return (
     <section className="archiveWrap" ref={sectionRef}>
-      <img src="/images/archive-photo.png" alt="" className="archiveBg" />
+      <img src="/images/vindee-archive.jpg" alt="" className="archiveBg" />
       <div className="archiveOverlay" />
 
       <div className={`archiveContent ${inView ? 'archiveContentVisible' : ''}`}>

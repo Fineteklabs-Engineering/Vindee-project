@@ -1,4 +1,4 @@
-/* contact-booking.css */
+
 .bookingWrap {
   width: 100%;
   background-image: url('/images/contact-image.png');
@@ -13,7 +13,6 @@
   overflow: hidden;
 }
 
-/* overlay to keep the card/text readable over any photo */
 .bookingOverlay {
   position: absolute;
   inset: 0;
