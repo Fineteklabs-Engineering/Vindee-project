@@ -18,6 +18,7 @@
 }
 
 .highlightsTitle {
+  
   font-size: clamp(1.6rem, 2.8vw, 2.4rem);
   font-weight: 700;
   color: #0A0A0A;
