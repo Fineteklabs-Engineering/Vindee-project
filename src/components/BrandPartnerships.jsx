@@ -2,9 +2,10 @@ import '../styles/brand-partnerships.css'
 
 
 const partners = [
+  { name: 'Chapa Dimba', logo: '/images/chapa-dimba.jpg', className: 'partnerChapaDimba' },
   { name: 'Nescafé', logo: '/images/nescafe2.png', className: 'partnerNescafe' },
   { name: 'Safaricom', logo: '/images/safaricom.png', className: 'partnerSafaricom' },
-  { name: 'Chapa Dimba', logo: '/images/chapa-dimba.jpg', className: 'partnerChapaDimba' },
+  
   { name: 'M-Pesa', logo: '/images/mpesa.png', className: 'partnerMpesa' },
   { name: 'iPhone', logo: '/images/iphone.png', className: 'partnerIphone' },
 ];

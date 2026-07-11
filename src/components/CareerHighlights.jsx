@@ -54,7 +54,7 @@ const CareerHighlights = () => {
 
   const active = highlights[activeIndex];
 
-  // Next three items after the active one, wrapping around
+  
   const upNext = [1, 2, 3].map((offset) => {
     const index = (activeIndex + offset) % highlights.length;
     return { ...highlights[index], index };

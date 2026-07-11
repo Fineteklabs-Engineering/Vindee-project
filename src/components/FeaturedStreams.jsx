@@ -19,13 +19,14 @@ const streams = [
     link: '#',
     category: 'Celebrity',
   },
+  /*
   {
     title: 'Nairobi Street Tour ft. Sumeeya',
     description: 'A fan-favorite journey through Eastleigh tasting camel meat and Somali dishes.',
     image: '/images/vindee-sumeya.png',
     link: '#',
     category: 'Street & Guest',
-  },
+  },*/
   {
     title: 'Let\'s Explore Nairobi ft. Thickyy Sandra',
     description: 'Over 112K views highlighting urban Kenyan lifestyle and elite social circles.',

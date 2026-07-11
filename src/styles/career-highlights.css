@@ -1,6 +1,9 @@
 .highlightsWrap {
   width: 100%;
-  background: #F5F3EF;
+  background-image: url('/images/career-highlights.jpg') !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 4rem 3rem;
   text-align: center;
   font-family: 'Poppins', sans-serif;
@@ -8,15 +11,16 @@
   overflow: hidden;
 }
 
-/* subtle dot-grid texture */
+
 .highlightsWrap::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(10, 10, 10, 0.06) 1px, transparent 1px);
-  background-size: 22px 22px;
+  background: rgba(245, 243, 239, 0.45);
   pointer-events: none;
+  z-index: 0;
 }
+
 
 .highlightsEyebrow {
   position: relative;
