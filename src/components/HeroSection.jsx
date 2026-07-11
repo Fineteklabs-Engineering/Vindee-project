@@ -24,7 +24,7 @@ const HeroSection = () => {
           muted
           loop
           playsInline
-          poster="/images/vindee-hero-photo2.jpg"
+         
         >
           <source src="/videos/vindee-hero.mp4" type="video/mp4" />
         </video>
