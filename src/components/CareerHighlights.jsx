@@ -12,8 +12,8 @@ const highlights = [
   {
     tag: 'Global Collabs',
     title: 'Global Collaborations',
-    description: 'Cross-cultural streams with Italian streamer Giulia Mazza and road streams across Tanzania.',
-    image: '/images/vindee-and-italian.png',
+    description: 'A viral crossover livestream with Japanese creator Mokkun, blending Kenyan street culture with cross-continental comedy.',
+    image: '/images/vindee-japanese.png',
   },
   {
     tag: 'Sponsorship',
