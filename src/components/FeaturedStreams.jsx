@@ -44,7 +44,7 @@ const streams = [
   {
     title: 'International OmeTV Desktop Stream',
     description: 'Bringing global audiences together via spontaneous desktop interactions.',
-    image: '/images/vindee-ome.png',
+    image: '/images/vindee-omeTv.png',
     link: '#',
     category: 'Desktop',
   },

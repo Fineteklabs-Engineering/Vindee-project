@@ -1,4 +1,4 @@
-// CareerHighlights.jsx
+
 import { useEffect, useRef, useState } from 'react';
 import '../styles/career-highlights.css';
 
