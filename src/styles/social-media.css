@@ -42,7 +42,6 @@
   box-shadow: 0 4px 16px rgba(232, 89, 12, 0.5);
 }
 
-/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .socialFloatBtn {
     animation: none !important;

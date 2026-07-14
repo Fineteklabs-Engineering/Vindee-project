@@ -1,4 +1,4 @@
-/* featured-streams.css */
+
 .streamsWrap {
   width: 100%;
   background: #17140F;
@@ -72,7 +72,7 @@
 
 .streamsTab:hover {
   border-color: #E8590C;
-  color: #F2A20C;
+  
 }
 
 .streamsTabActive {
@@ -82,7 +82,7 @@
   font-weight: 700;
 }
 
-/* ===== Carousel ===== */
+
 .streamsCarousel {
   position: relative;
   z-index: 1;
