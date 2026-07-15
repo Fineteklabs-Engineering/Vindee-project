@@ -77,7 +77,7 @@ const HeroSection = () => {
     </svg>
   </p>
   <h1 className="headline">
-    THE FACE OF<br />KENYAN IRL LIVE
+    THE FACE OF<br />KENYA IRL LIVESTREAMING
   </h1>
   <p className="subtext">
     High-energy, raw, and authentic multi-hour broadcasts exploring
