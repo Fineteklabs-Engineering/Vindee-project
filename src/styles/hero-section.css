@@ -1,4 +1,4 @@
-
+/* hero-section.css */
 .hero {
   position: relative;
   width: 100%;
@@ -18,7 +18,6 @@
   z-index: 1;
   pointer-events: none;
 }
-
 
 @keyframes fadeSlideUp {
   from {
@@ -60,7 +59,7 @@
 }
 
 .logo {
-  height: 56px;
+  height: 66px;
   width: auto;
   object-fit: contain;
 }
@@ -91,7 +90,6 @@
   background: #0A0A0A;
 }
 
-/* Animate hamburger -> X when open */
 .menuBtn.open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -112,7 +110,11 @@
   padding: 0 5rem;
   max-width: 640px;
 }
+
 .vindeeName {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-family: 'Permanent Marker', cursive;
   font-size: clamp(1.6rem, 3vw, 3rem);
   background: linear-gradient(90deg, #E8590C, #F2A20C);
@@ -124,8 +126,25 @@
   animation: fadeSlideUp 0.8s ease forwards;
   animation-delay: 0.05s;
   transform: rotate(-2deg);
-  display: inline-block;
 }
+
+.vindeeSpark {
+  color: #F2C40C;
+  animation: sparkTwinkle 2.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes sparkTwinkle {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(0.85) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(15deg);
+  }
+}
+
 .headline {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 700;
@@ -213,6 +232,7 @@
   color: #F5F5F5 !important;
   transform: translateY(-2px);
 }
+
 .bgVideoWrap {
   position: absolute;
   inset: 0;
@@ -220,17 +240,6 @@
   height: 100%;
   z-index: 0;
   overflow: hidden;
-}
-
-.bgVideoIframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 56.25vw; /* maintains 16:9 while filling width */
-  min-height: 100vh;
-  min-width: 177.77vh; /* maintains 16:9 while filling height */
-  transform: translate(-50%, -50%);
 }
 
 .bgVideo {
@@ -282,31 +291,119 @@
   color: #0A0A0A;
 }
 
-.vindeeName {
-  display: inline-flex;
+/* Side menu */
+.navOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 150;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.navOverlayOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sideMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 320px;
+  max-width: 82vw;
+  background: #0A0A0A;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 160;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sideMenuOpen {
+  transform: translateX(0);
+}
+
+.sideMenuHeader {
+  display: flex;
   align-items: center;
-  gap: 0.4rem;
+  justify-content: space-between;
+  margin-bottom: 3rem;
 }
 
-.vindeeSpark {
-  color: #F2C40C;
-  animation: sparkTwinkle 2.2s ease-in-out infinite;
-  transform-origin: center;
+.sideMenuLogo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
 }
 
-@keyframes sparkTwinkle {
-  0%, 100% {
-    opacity: 0.6;
-    transform: scale(0.85) rotate(0deg);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.1) rotate(15deg);
-  }
+.sideMenuClose {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F5F5F5;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
+.sideMenuClose:hover {
+  border-color: #F2A20C;
+  color: #F2A20C;
+ 
+}
 
+.sideMenuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
+.sideMenuItem {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.sideMenuOpen .sideMenuItem {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sideMenuLink {
+  background: none;
+  border: none;
+  color: #F5F5F5;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: color 0.2s ease;
+}
+
+.sideMenuLink:hover {
+  color: #F2A20C;
+}
+
+.sideMenuFooter {
+  margin-top: auto;
+  font-size: 0.85rem;
+  color: #6b6b6b;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .navbar,
@@ -349,7 +446,6 @@
 @media (max-width: 560px) {
   .hero {
     min-height: 100svh;
-   
   }
 
   .navbar {
@@ -392,5 +488,10 @@
 
   .portrait {
     display: none;
+  }
+
+  .sideMenu {
+    width: 100%;
+    max-width: 100%;
   }
 }
