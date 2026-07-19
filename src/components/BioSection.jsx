@@ -25,7 +25,7 @@ const BioSection = () => {
 
           <p className="bioParagraph">
             Now ranked the 3rd Most Influential Streamer in Africa, his mission
-            remains the same one that started it all — elevating the Kenyan
+            remains the same one that started it all - elevating the Kenyan
             content creation scene to a global standard.
           </p>
 
