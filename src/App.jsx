@@ -1,15 +1,26 @@
-import React from 'react'
-import Home from './Pages/Home'
-import StatsBar from './components/StatsBar'
-import SocialMedia from './components/Socialmedia'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Home from './Pages/Home';
+import AboutPage from './Pages/AboutPage';
+import HighlightsPage from './Pages/HighlightsPage';
+import StreamsPage from './Pages/StreamsPage';
+import BookPage from './Pages/BookPage';
+import SocialMedia from './components/Socialmedia';
+import './index.css'
 
 const App = () => {
   return (
     <>
-    <Home />
-    <SocialMedia />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/highlights" element={<HighlightsPage />} />
+        <Route path="/streams" element={<StreamsPage />} />
+        <Route path="/book" element={<BookPage />} />
+      </Routes>
+      <SocialMedia />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
