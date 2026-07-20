@@ -1,4 +1,4 @@
-// HighlightsGrid.jsx
+
 import { useEffect, useRef, useState } from 'react';
 import '../styles/highlights-grid.css';
 

@@ -95,11 +95,15 @@ const Footer = () => {
             ))}
           </nav>
 
+          <p className='powered'>Powered by <a href="https://magicalafrica.nakkei.com/">magical.africa</a></p>
+
           <button className="footerScrollTop" onClick={scrollToTop} aria-label="Scroll to top">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M12 19V5M5 12l7-7 7 7" />
             </svg>
           </button>
+
+          
         </div>
       </div>
     </footer>

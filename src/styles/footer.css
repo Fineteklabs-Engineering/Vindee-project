@@ -164,6 +164,20 @@
   transform: translateY(-3px);
 }
 
+.powered{
+    color: #B8B8B8;
+    font-size: 0.8rem;
+  
+}
+
+.powered a{
+   color: #F5F5F5;
+   
+}
+.powered a:hover{
+  color: #F2A20C;
+}
+
 /* Tablet */
 @media screen  and (min-width:1440px){
   .footerWrap{
