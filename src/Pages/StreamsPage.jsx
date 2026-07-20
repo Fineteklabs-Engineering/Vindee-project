@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import Navbar from '../components/Navbar';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import Footer from '../components/Footer'
+import { Helmet } from 'react-helmet-async';
 import '../styles/stream-page.css';
 
 
@@ -94,12 +95,16 @@ const StreamsPage = () => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    // Scroll down to the results so the search feels like it "did" something
+    
     document.querySelector('.streamsAllSection')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
+    
     <div className="streamsPageWrap">
+      <Helmet>
+      <title>Career Highlights</title>
+    </Helmet>
       <Navbar forceLight />
 
       <header className="streamsPageHeader">
