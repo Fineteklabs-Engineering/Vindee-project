@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/navbar.css';
@@ -11,16 +10,22 @@ const navLinks = [
   { label: 'Book', path: '/book' },
 ];
 
-const Navbar = () => {
+const Navbar = ({ forceLight = false }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(forceLight);
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Pages with no dark hero behind the navbar (like StreamsPage) pass
+    // forceLight so it always renders in its light/scrolled state — skip
+    // the scroll listener entirely so it can't flip back to transparent
+    // white-text while sitting at the top of the page.
+    if (forceLight) return undefined;
+
     const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [forceLight]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';

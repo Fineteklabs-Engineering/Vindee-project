@@ -1,0 +1,355 @@
+/* stream-page.css */
+.streamsPageWrap {
+  width: 100%;
+  background: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.streamsPageHeader {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 9rem 2rem 3rem;
+  text-align: center;
+}
+
+.streamsPageTitle {
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  font-weight: 700;
+  color: #0A0A0A;
+  margin: 0 0 0.85rem;
+  line-height: 1.15;
+}
+
+.streamsPageSubtitle {
+  font-size: 1rem;
+  color: #6b6b6b;
+  margin: 0;
+}
+
+.streamsSectionLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #E8590C;
+  margin: 0 0 1.5rem;
+}
+
+/* Recent streams */
+.streamsRecentSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+.streamsRecentGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+}
+
+.streamsRecentFeature {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.streamsRecentFeatureImageWrap {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  margin: 0 0 1.25rem;
+}
+
+.streamsRecentFeatureImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.streamsRecentFeature:hover .streamsRecentFeatureImage {
+  transform: scale(1.03);
+}
+
+.streamsRecentTag {
+  display: inline-block;
+  background: transparent;
+  color: #E8590C;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.3rem 0rem;
+  border-radius: 999px;
+  margin: 0 0 0.75rem;
+}
+
+.streamsRecentFeatureTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+}
+
+.streamsRecentFeatureDesc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #6b6b6b;
+  margin: 0;
+  max-width: 480px;
+}
+
+.streamsRecentSide {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.streamsRecentSideCard {
+  display: flex;
+  gap: 1.1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.streamsRecentSideImageWrap {
+  flex-shrink: 0;
+  width: 180px;
+  height: 140px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.streamsRecentSideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.streamsRecentSideCard:hover .streamsRecentSideImage {
+  transform: scale(1.06);
+}
+
+.streamsRecentSideBody {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.streamsRecentSideTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* All streams */
+.streamsAllSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem 6rem;
+}
+
+.streamsAllTabs {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0 0 2.5rem;
+}
+
+.streamsAllTab {
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  padding: 0.55rem 1.35rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #6b6b6b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.streamsAllTab:hover {
+  border-color: #E8590C;
+  color: #0A0A0A;
+}
+
+.streamsAllTabActive {
+  background: linear-gradient(90deg, #E8590C, #F2A20C);
+  border-color: transparent;
+  color: #0A0A0A;
+  font-weight: 700;
+}
+
+.streamsAllGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.streamsAllCard {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.streamsAllCardImageWrap {
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  margin: 0 0 1.1rem;
+}
+
+.streamsAllCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.streamsAllCard:hover .streamsAllCardImage {
+  transform: scale(1.06);
+}
+
+.streamsAllCardTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin: 0 0 0.5rem;
+  line-height: 1.35;
+}
+
+.streamsAllCardDesc {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #6b6b6b;
+  margin: 0;
+}
+
+.streamsSearchForm {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1.75rem auto 0;
+  max-width: 420px;
+}
+
+.streamsSearchInput {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  color: #0A0A0A;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.streamsSearchInput::placeholder {
+  color: #A0A0A0;
+}
+
+.streamsSearchInput:focus {
+  outline: none;
+  border-color: #F2A20C;
+  box-shadow: 0 0 0 3px rgba(242, 162, 12, 0.15);
+}
+
+.streamsSearchBtn {
+  background: linear-gradient(90deg, #E8590C, #F2A20C);
+  color: #0A0A0A;
+  border: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.streamsSearchBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(232, 89, 12, 0.3);
+}
+
+.streamsNoResults {
+  text-align: center;
+  color: #6b6b6b;
+  font-size: 0.9rem;
+  padding: 3rem 0;
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .streamsSearchForm {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .streamsSearchBtn {
+    width: 100%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .streamsPageHeader {
+    padding: 7rem 1.5rem 2.5rem;
+  }
+
+  .streamsRecentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .streamsRecentSideImageWrap {
+    width: 150px;
+    height: 115px;
+  }
+
+  .streamsAllGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .streamsPageHeader {
+    padding: 6.5rem 1.25rem 2rem;
+  }
+
+  .streamsRecentSection,
+  .streamsAllSection {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .streamsRecentSideCard {
+    gap: 0.9rem;
+  }
+
+  .streamsRecentSideImageWrap {
+    width: 130px;
+    height: 100px;
+  }
+
+  .streamsAllGrid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .streamsAllTabs {
+    gap: 0.5rem;
+  }
+
+  .streamsAllTab {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.8rem;
+  }
+}
