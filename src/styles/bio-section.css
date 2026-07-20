@@ -101,6 +101,24 @@
 }
 
 /* Tablet */
+
+@media screen and (min-width: 1440px) {
+  .bioWrap {
+    max-height: 620px;
+  }
+
+  .bioContentCol {
+    padding: 3rem 4.5rem;
+  }
+
+  .bioParagraph {
+    margin-bottom: 1rem;
+  }
+
+  .bioMission {
+    margin: 1.25rem 0 1.5rem;
+  }
+}
 @media (max-width: 900px) {
   .bioOuterWrap {
     padding: 1.5rem;
