@@ -1,173 +1,129 @@
 /* stats-bar.css */
 .statsBar {
   width: 100%;
-  background: #F5F3EF;
-  padding: 4rem 3rem;
+  background-image: url('/images/stats-image.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 5rem 3rem;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
 .statsBar::before {
   content: '';
   position: absolute;
-  top: -120px;
-  right: -80px;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(242, 196, 12, 0.1) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.statsBar::after {
-  content: '';
-  position: absolute;
-  bottom: -140px;
-  left: -100px;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(232, 89, 12, 0.07) 0%, transparent 70%);
+  inset: 0;
+  background: rgba(255, 255, 255, 0.65);
+  z-index: 0;
   pointer-events: none;
 }
 
 .statsInner {
   position: relative;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
   max-width: 1300px;
   margin: 0 auto;
 }
 
-/* the circle itself — small, fixed to viewport, stacked in a column */
-.statCard {
-  position: fixed;
-  left: 24px;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #F2C40C, #F2A20C);
-  box-shadow: 0 6px 16px rgba(242, 162, 12, 0.3);
+.statItem {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: 0.35rem;
+  padding: 0 2.5rem;
   opacity: 0;
-  pointer-events: none;
-  z-index: 40;
-  transition: opacity 0.6s ease;
-  animation: floatCircle 6s ease-in-out infinite;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.statCardVisible {
-  opacity: 0.92;
+.statItem:not(:last-child) {
+  border-right: 1px solid rgba(10, 10, 10, 0.15);
 }
 
-/* stack vertically, evenly spaced down the left side */
-.statCard:nth-child(1) { top: 18%; animation-delay: 0s; }
-.statCard:nth-child(2) { top: 32%; animation-delay: 0.4s; }
-.statCard:nth-child(3) { top: 46%; animation-delay: 0.8s; }
-.statCard:nth-child(4) { top: 60%; animation-delay: 1.2s; }
-.statCard:nth-child(5) { top: 74%; animation-delay: 1.6s; }
-
-/* gentle floating bob */
-@keyframes floatCircle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.statAccent {
-  display: none;
+.statItemVisible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .statIcon {
-  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(232, 89, 12, 0.08);
+  color: #E8590C;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.15rem;
-}
-
-.statIcon svg {
-  width: 13px;
-  height: 13px;
+  margin: 0 0 0.9rem;
 }
 
 .statValue {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.7rem;
+  font-size: clamp(1.5rem, 2.2vw, 2.1rem);
   font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 0.1rem;
-  line-height: 1;
+  background: linear-gradient(90deg, #C97A0E, #E8590C);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0 0 0.4rem;
 }
 
 .statLabel {
-  font-size: 0.38rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #6b6b6b;
+  color: #5c5648;
   margin: 0;
-  line-height: 1.05;
 }
 
 /* Tablet */
 @media (max-width: 900px) {
   .statsBar {
-    padding: 3rem 2rem;
+    padding: 3.5rem 2rem;
   }
 
-  .statCard {
-    width: 54px;
-    height: 54px;
-    left: 16px;
+  .statsInner {
+    justify-content: center;
   }
 
-  .statIcon svg {
-    width: 11px;
-    height: 11px;
-  }
-
-  .statValue {
-    font-size: 0.6rem;
-  }
-
-  .statLabel {
-    font-size: 0.34rem;
+  .statItem {
+    padding: 0 1.5rem;
+    flex: 0 0 33%;
+    border-right: none !important;
+    margin-bottom: 1.75rem;
   }
 }
 
-/* Mobile: column gets cramped on short viewports, so thin it out */
+/* Mobile */
 @media (max-width: 560px) {
   .statsBar {
-    padding: 2.5rem 1.25rem;
+    padding: 3rem 1.25rem;
   }
 
-  .statCard {
-    width: 44px;
-    height: 44px;
-    left: 10px;
+  .statItem {
+    flex: 0 0 45%;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
   }
 
-  .statIcon svg {
-    width: 9px;
-    height: 9px;
+  .statIcon {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0.65rem;
   }
 
   .statValue {
-    font-size: 0.5rem;
+    font-size: 1.3rem;
   }
 
   .statLabel {
-    font-size: 0.28rem;
-  }
-
-  .statCard:nth-child(1) { top: 20%; }
-  .statCard:nth-child(2) { top: 36%; }
-  .statCard:nth-child(3) { top: 52%; }
-  .statCard:nth-child(4) { top: 68%; }
-  /* drop the 5th on very short screens to avoid crowding */
-  .statCard:nth-child(5) {
-    display: none;
+    font-size: 0.62rem;
   }
 }

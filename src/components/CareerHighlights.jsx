@@ -8,24 +8,28 @@ const highlights = [
     title: '30-Day IRL Marathon',
     description: 'A historic 30-day consecutive livestream, trending daily with Kenya\'s biggest celebrities.',
     image: '/images/vindee-30day.png',
+    link: 'https://www.youtube.com/watch?v=8f1qh1bYYJw'
   },
   {
     tag: 'Global Collabs',
     title: 'Global Collaborations',
     description: 'A viral crossover livestream with Japanese creator Mokkun, blending Kenyan street culture with cross-continental comedy.',
     image: '/images/vindee-japanese.png',
+    link: 'https://www.youtube.com/watch?v=MTN5s8uxpx4&t=10s'
   },
   {
     tag: 'Sponsorship',
     title: 'Chapa Dimba Season 5',
     description: 'Selected among Kenya\'s top influencers for the Safaricom Chapa Dimba Season 5 launch.',
     image: '/images/vindee-image3.jpeg',
+    link: 'https://www.youtube.com/watch?v=RdlIlXJJ4C0'
   },
   {
     tag: 'Diplomacy',
     title: 'African Forward Summit',
     description: 'Invited as a premier creator to the continental summit hosted by President Ruto and President Macron.',
     image: '/images/vindee-africansummit.png',
+    link: 'https://www.youtube.com/watch?v=kF_wPCWJWks&t=11s'
   },
 ];
 
@@ -77,7 +81,12 @@ const CareerHighlights = () => {
           <div className="highlightMainBody">
             <h3 className="highlightMainTitle">{active.title}</h3>
             <p className="highlightMainDesc">{active.description}</p>
-            <button className="highlightMainCta">Learn more</button>
+          <button
+           className="highlightMainCta"
+           onClick={() => window.open(active.link, "_blank")}
+         >
+          Learn more
+         </button>
           </div>
         </div>
 

@@ -1,8 +1,10 @@
 
 import { Helmet } from 'react-helmet-async';
 import HighlightsHero from '../components/HighlightsHero';
-{/*} import HighlightsGrid from '../components/HighlightsGrid'; */}
-
+import HighlightsGrid from '../components/HighlightsGrid';
+import Footer from '../components/Footer';
+import StatsBar from '../components/StatsBar';
+import ArchiveSection from '../components/ArchiveSection';
 
 const HighlightsPage = () => (
   <>
@@ -10,8 +12,11 @@ const HighlightsPage = () => (
       <title>Career Highlights - Vindee Official</title>
     </Helmet>
     <HighlightsHero />
-    {/* <HighlightsGrid /> */}
-    
+     <StatsBar />
+    <HighlightsGrid />
+    <ArchiveSection />
+   
+    <Footer />
   </>
 );
 

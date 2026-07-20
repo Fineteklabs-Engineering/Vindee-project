@@ -1,5 +1,6 @@
 import Navbar from './Navbar';
 import '../styles/highlights-hero.css';
+import { href } from 'react-router-dom';
 
 const HighlightsHero = () => {
   return (
@@ -28,7 +29,7 @@ const HighlightsHero = () => {
             Marathons, milestones, and mega streams - every moment that
             built Kenya's IRL streaming movement.
           </p>
-          <button className="highlightsHeroCta">VIEW HIGHLIGHTS</button>
+          <button className="highlightsHeroCta" onClick={()=> window.location.href = 'https://www.youtube.com/watch?v=8f1qh1bYYJw'}>VIEW HIGHLIGHTS</button>
         </div>
       </div>
 
