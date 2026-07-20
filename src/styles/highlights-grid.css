@@ -1,0 +1,126 @@
+/* highlights-grid.css */
+.highlightsGridWrap {
+  width: 100%;
+  background: #ffffff;
+  padding: 5rem 3rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.highlightsGridEyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #6b6b6b;
+  margin: 0 0 0.75rem;
+}
+
+.highlightsGridHeading {
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 700;
+  color: #0A0A0A;
+  margin: 0 0 3.5rem;
+}
+
+.highlightsGridInner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.gridCard {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.gridCardVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gridCardImageWrap {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  margin: 0 0 1rem;
+}
+
+.gridCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gridCard:hover .gridCardImage {
+  transform: scale(1.06);
+}
+
+.gridCardTag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(90deg, #E8590C, #F2A20C);
+  color: #0A0A0A;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+.gridCardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.gridCardDesc {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #6b6b6b;
+  margin: 0;
+}
+
+/* Desktop 1440+ */
+@media screen and (min-width: 1440px) {
+  .highlightsGridWrap {
+    padding: 6rem 5rem;
+  }
+
+  .highlightsGridInner {
+    max-width: 1500px;
+    gap: 2rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .highlightsGridInner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .highlightsGridWrap {
+    padding: 3rem 1.25rem;
+  }
+
+  .highlightsGridHeading {
+    margin: 0 0 2.25rem;
+  }
+
+  .highlightsGridInner {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
