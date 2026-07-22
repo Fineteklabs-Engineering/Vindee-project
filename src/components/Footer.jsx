@@ -1,6 +1,13 @@
 import '../styles/footer.css'
+import { Link } from 'react-router-dom';
 
-const navLinks = ['Home', 'Streams', 'Highlights', 'Book'];
+
+const navLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'Streams', path: '/streams' },
+  { name: 'Highlights', path: '/career-highlights' },
+  { name: 'Book', path: '/book' },
+];
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -89,11 +96,17 @@ const Footer = () => {
         </div>
 
         <div className="footerBottomRow">
-          <nav className="footerNav">
-            {navLinks.map((link) => (
-              <a key={link} href="" className="footerNavPill">{link}</a>
-            ))}
-          </nav>
+         <nav className="footerNav">
+  {navLinks.map((link) => (
+    <Link
+      key={link.name}
+      to={link.path}
+      className="footerNavPill"
+    >
+      {link.name}
+    </Link>
+  ))}
+</nav>
 
           <p className='powered'>Powered by <a href="https://magical.africa/">magical.africa</a></p>
 
