@@ -104,7 +104,7 @@ const AboutHero = () => {
         </h1>
         <p className="aboutHeroSubtext">
           Meet the man behind Kenya's IRL streaming movement - from viral
-          street pranks to becoming the 3rd Most Influential Streamer in Africa.
+          street pranks to becoming the Top Most Influential Streamer in Africa.
         </p>
       </div>
 

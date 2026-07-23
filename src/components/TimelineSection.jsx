@@ -35,8 +35,8 @@ const milestones = [
   },
   {
     label: 'The Ranking',
-    title: '3rd in Africa',
-    description: 'Recognized as the 3rd Most Influential Streamer in Africa, elevating Kenyan content to a global stage.',
+    title: 'Top in Africa',
+    description: 'Recognized as the Top Most Influential Streamer in Africa, elevating Kenyan content to a global stage.',
   },
 ];
 
