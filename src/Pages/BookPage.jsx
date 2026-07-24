@@ -166,7 +166,8 @@ const BookPage = () => {
                 <div>
                   <p className="bookInfoLabel">Phone</p>
                   <a href="tel:+254705225797" className="bookInfoValue bookInfoValueLink">
-                    +254 705 225 797
+                    +254 705 225 797, +254 740 202 159
+                    
                   </a>
                 </div>
               </motion.div>
@@ -178,7 +179,7 @@ const BookPage = () => {
                 <div>
                   <p className="bookInfoLabel">Email</p>
                   <a href="mailto:vindeeofficialmarketing@gmail.com" className="bookInfoValue bookInfoValueLink">
-                    vindeeofficialmarketing@gmail.com
+                    marketing@vindeeofficial.com
                   </a>
                 </div>
               </motion.div>
