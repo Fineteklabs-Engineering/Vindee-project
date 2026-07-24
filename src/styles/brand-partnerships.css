@@ -1,8 +1,8 @@
-/* brand-partnerships.css */
+
 .partnersWrap {
   width: 100%;
   background: #ffffff;
-  padding: 3.5rem 5rem;
+  padding: 4rem 0;
   text-align: center;
   font-family: 'Poppins', sans-serif;
 }
@@ -12,79 +12,95 @@
   font-weight: 600;
   color: #0A0A0A;
   margin: 0 0 2.5rem;
+  padding: 0 2rem;
+  padding-bottom: 3rem;
 }
 
-.partnersRow {
+.partnersMarqueeWrap {
+  max-width: 660px;
+  margin: 0 auto;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.partnersMarqueeTrack {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 3.5rem;
-  flex-wrap: wrap;
+  width: max-content;
+  gap: 4rem;
+  animation: partnersMarquee 22s linear infinite;
 }
 
-.partnerLogo {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #b5b3ad;
-  filter: grayscale(100%);
-  opacity: 0.75;
-  transition: opacity 0.25s ease, filter 0.25s ease, color 0.25s ease;
-  cursor: default;
+.partnerMarqueeItem {
+  flex: 0 0 auto;
 }
-.partnerIcon {
-  height: 100px;
-  width: 100px;
+
+.partnerMarqueeIcon {
+  height: 150px;
+  width: 150px;
   object-fit: contain;
-  opacity: 0.75;
-  transition: opacity 0.25s ease, filter 0.25s ease;
-}
-.partnerLogo:hover {
-  opacity: 1;
-  filter: grayscale(0%);
+  opacity: 0.8;
+  transition: opacity 0.25s ease;
 }
 
-.partnerNescafe:hover { color: #C8102E; }
-.partnerSafaricom:hover { color: #0DA84E; }
-.partnerChapaDimba:hover { color: #E8590C; }
-.partnerMpesa:hover { color: #4CAF50; }
-.partnerIphone:hover { color: #0A0A0A; }
+.partnerMarqueeItem:hover .partnerMarqueeIcon {
+  opacity: 1;
+}
+
+@keyframes partnersMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 
 /* Tablet */
 @media (max-width: 900px) {
   .partnersWrap {
-    padding: 3rem 2rem;
+    padding: 3rem 0;
   }
 
-  .partnersRow {
-    gap: 2rem;
+  .partnersHeadline {
+    padding: 0 1.5rem;
   }
 
-  .partnerLogo {
-    font-size: 1.1rem;
+  .partnersMarqueeTrack {
+    gap: 3rem;
+    animation-duration: 18s;
+  }
+    .partnersMarqueeWrap {
+    max-width: 560px;
   }
 }
 
 /* Mobile */
 @media (max-width: 560px) {
   .partnersWrap {
-    padding: 2.5rem 1.25rem;
+    padding: 2.5rem 0;
   }
 
   .partnersHeadline {
     font-size: 0.95rem;
     margin: 0 0 1.75rem;
+    padding: 0 1.25rem;
   }
 
-  .partnersRow {
-    gap: 1.5rem;
-    row-gap: 1.25rem;
+  .partnersMarqueeTrack {
+    gap: 2rem;
+    animation-duration: 14s;
   }
 
-  .partnerLogo {
-    font-size: 0.95rem;
+  .partnerMarqueeIcon {
+    height: 70px;
+    width: 70px;
   }
-    .partnerIcon {
-    height: 60px;
-    width: 60px;
+ 
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .partnersMarqueeTrack {
+    animation: none !important;
+  }
+  .partnersMarqueeWrap {
+    max-width: 340px;
   }
 }

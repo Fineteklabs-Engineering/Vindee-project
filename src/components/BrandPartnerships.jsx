@@ -1,15 +1,12 @@
-import '../styles/brand-partnerships.css'
-
+// BrandPartnerships.jsx
+import '../styles/brand-partnerships.css';
 
 const partners = [
-  { name: 'Chapa Dimba', logo: '/images/chapa-dimba.jpg', className: 'partnerChapaDimba' },
-  { name: 'Nescafé', logo: '/images/nescafe2.png', className: 'partnerNescafe' },
-  { name: 'Gagdetopiah', logo: '/images/gadgetopiah.png', className: 'partnerNescafe' },
-  
- /* { name: 'Safaricom', logo: '/images/safaricom.png', className: 'partnerSafaricom' },*/
-  
-  { name: 'Betchapaa', logo: '/images/betchapaa2.png', className: 'partnerMpesa' },
-  { name: 'Bedpalace', logo: '/images/bedpalace2.png', className: 'partnerIphone' },
+  { name: 'Chapa Dimba', logo: '/images/chapa-dimba.jpg' },
+  { name: 'Nescafé', logo: '/images/nescafe2.png' },
+  { name: 'Gagdetopiah', logo: '/images/gadgetopiah.png' },
+  { name: 'Betchapaa', logo: '/images/betchapaa2.png' },
+  { name: 'Bedpalace', logo: '/images/bedpalace2.png' },
 ];
 
 const BrandPartnerships = () => {
@@ -17,13 +14,14 @@ const BrandPartnerships = () => {
     <section className="partnersWrap">
       <p className="partnersHeadline">Trusted by leading brands across Kenya</p>
 
-      <div className="partnersRow">
-        {partners.map((partner) => (
-          <div key={partner.name} className="partnerItem">
-            <img src={partner.logo} alt={`${partner.name} logo`} className="partnerIcon" />
-           {/* <span className={`partnerLogo ${partner.className}`}>{partner.name}</span> */} 
-          </div>
-        ))}
+      <div className="partnersMarqueeWrap">
+        <div className="partnersMarqueeTrack">
+          {[...partners, ...partners].map((partner, index) => (
+            <div key={`${partner.name}-${index}`} className="partnerMarqueeItem">
+              <img src={partner.logo} alt={`${partner.name} logo`} className="partnerMarqueeIcon" />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
