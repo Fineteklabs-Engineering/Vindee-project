@@ -1,5 +1,6 @@
+// Navbar.jsx
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import '../styles/navbar.css';
 
 const navLinks = [
@@ -14,12 +15,9 @@ const Navbar = ({ forceLight = false }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(forceLight);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    // Pages with no dark hero behind the navbar (like StreamsPage) pass
-    // forceLight so it always renders in its light/scrolled state — skip
-    // the scroll listener entirely so it can't flip back to transparent
-    // white-text while sitting at the top of the page.
     if (forceLight) return undefined;
 
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -48,6 +46,18 @@ const Navbar = ({ forceLight = false }) => {
           onClick={() => handleNavClick('/')}
         />
 
+        <nav className={`navbarLinks ${scrolled ? 'navbarLinksScrolled' : ''}`}>
+          {navLinks.map((link) => (
+            <button
+              key={link.path}
+              onClick={() => handleNavClick(link.path)}
+              className={`navbarLink ${location.pathname === link.path ? 'navbarLinkActive' : ''}`}
+            >
+              {link.label}
+            </button>
+          ))}
+        </nav>
+
         <div className="navbarActions">
           <button
             className={`menuBtn ${menuOpen ? 'open' : ''} ${scrolled ? 'menuBtnScrolled' : ''}`}
@@ -75,7 +85,7 @@ const Navbar = ({ forceLight = false }) => {
         </div>
 
         <ul className="sideMenuList">
-          {navLinks.map((link, index) => (
+          {[{ label: 'Home', path: '/' }, ...navLinks].map((link, index) => (
             <li
               key={link.path}
               className="sideMenuItem"
