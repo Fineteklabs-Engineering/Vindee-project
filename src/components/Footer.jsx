@@ -56,11 +56,11 @@ const Footer = () => {
         <img src="/images/vindee-footer.jpeg" alt="Vindee Official" className="footerPhoto" />
 
         <div className="footerLegal">
-          <a href="#" className="footerLegalLink">Terms &amp; conditions</a>
+          <a href="" className="footerLegalLink">Terms &amp; conditions</a>
           <span className="footerDivider">|</span>
-          <a href="#" className="footerLegalLink">Sitemap</a>
+          <a href="" className="footerLegalLink">Sitemap</a>
           <span className="footerDivider">|</span>
-          <a href="#" className="footerLegalLink">Privacy policy</a>
+          <a href="" className="footerLegalLink">Privacy policy</a>
         </div>
       </div>
 

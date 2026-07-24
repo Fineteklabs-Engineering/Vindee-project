@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import '../styles/featured-streams.css';
 
-const categories = ['All', 'Celebrity', 'Street & Guest', 'Desktop'];
+const categories = ['All', 'Celebrity', 'Street & Guest', 'Desktop', 'International'];
 
 const streams = [
   {
@@ -47,6 +47,13 @@ const streams = [
     image: '/images/vindee-omeTv.png',
     link: 'https://www.youtube.com/watch?v=q76P5oUwvCQ',
     category: 'Desktop',
+  },
+  {
+    title: 'IRL Stream in Germany',
+    description: 'Exploring Germany’s streets, culture, and local experiences through an immersive IRL stream.',
+    image: '/images/vindee-germany.webp',
+    link: 'https://www.youtube.com/watch?v=sXSPqZjsAwI&t=9006s',
+    category: 'International',
   },
 ];
 

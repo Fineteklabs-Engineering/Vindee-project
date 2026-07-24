@@ -84,19 +84,19 @@ const Navbar = ({ forceLight = false }) => {
           </button>
         </div>
 
-        <ul className="sideMenuList">
-          {[{ label: 'Home', path: '/' }, ...navLinks].map((link, index) => (
-            <li
-              key={link.path}
-              className="sideMenuItem"
-              style={{ transitionDelay: menuOpen ? `${0.1 + index * 0.06}s` : '0s' }}
-            >
-              <button onClick={() => handleNavClick(link.path)} className="sideMenuLink">
-                {link.label}
-              </button>
-            </li>
-          ))}
-        </ul>
+      <ul className="sideMenuList">
+   {navLinks.map((link, index) => (
+    <li
+      key={link.path}
+      className="sideMenuItem"
+      style={{ transitionDelay: menuOpen ? `${0.1 + index * 0.06}s` : '0s' }}
+    >
+      <button onClick={() => handleNavClick(link.path)} className="sideMenuLink">
+        {link.label}
+      </button>
+    </li>
+  ))}
+</ul>
 
         <p className="sideMenuFooter">@vindee_official</p>
       </nav>
