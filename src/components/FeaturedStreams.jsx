@@ -1,4 +1,4 @@
-// FeaturedStreams.jsx
+
 import { useEffect, useRef, useState } from 'react';
 import '../styles/featured-streams.css';
 
@@ -9,14 +9,14 @@ const streams = [
     title: 'IRL Stream ft. Prezzo El Presidente',
     description: 'Prezzo gifts Vindee a custom bulletproof vest live, honoring his street streaming grit.',
     image: '/images/vindee-prezo3.png',
-    link: '#',
+    link: 'https://www.youtube.com/watch?v=qRdZC5btlx4',
     category: 'Celebrity',
   },
   {
     title: 'IRL Stream ft. Harmonize & China Town',
     description: 'A high-profile crossover with Bongo Flava megastar Harmonize and a tour of Nairobi\'s China Town.',
     image: '/images/vindee-harmonize.png',
-    link: '#',
+    link: 'https://www.youtube.com/watch?v=ApE4VUH9RzI',
     category: 'Celebrity',
   },
   /*
@@ -31,21 +31,21 @@ const streams = [
     title: 'Let\'s Explore Nairobi ft. Thickyy Sandra',
     description: 'Over 112K views highlighting urban Kenyan lifestyle and elite social circles.',
     image: '/images/vindee-thicksandra.png',
-    link: '#',
+    link: 'https://www.youtube.com/watch?v=O-yJBIZFYvM&t=6633s',
     category: 'Street & Guest',
   },
   {
     title: 'Who is Going Crazy? ft. IssaTravels',
     description: 'An explosive desktop stream packed with chaotic comedic timing and cross-cultural commentary.',
     image: '/images/vindee-whoisgoingcrazy.png',
-    link: '#',
+    link: 'https://www.youtube.com/watch?v=8lsqhJvpEl0',
     category: 'Desktop',
   },
   {
     title: 'International OmeTV Desktop Stream',
     description: 'Bringing global audiences together via spontaneous desktop interactions.',
     image: '/images/vindee-omeTv.png',
-    link: '#',
+    link: 'https://www.youtube.com/watch?v=q76P5oUwvCQ',
     category: 'Desktop',
   },
 ];
