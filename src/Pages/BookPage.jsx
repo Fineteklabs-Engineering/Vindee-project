@@ -48,10 +48,16 @@ const BookPage = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Contact request:', formData);
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const text = `Hi Vindee, my name is ${formData.firstName} ${formData.lastName}.\n\n${formData.message}\n\n(Reply to: ${formData.email})`;
+
+  const phone = '254705225797'; 
+  const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+  window.open(whatsappUrl, '_blank');
+};
 
   return (
 
