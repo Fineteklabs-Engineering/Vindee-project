@@ -95,7 +95,7 @@
  
 }
 
-/* Respect reduced motion */
+
 @media (prefers-reduced-motion: reduce) {
   .partnersMarqueeTrack {
     animation: none !important;

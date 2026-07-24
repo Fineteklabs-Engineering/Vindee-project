@@ -1,4 +1,4 @@
-// BrandPartnerships.jsx
+
 import '../styles/brand-partnerships.css';
 
 const partners = [
