@@ -176,4 +176,7 @@
     .aboutHeroDots {
     bottom: 1.25rem;
   }
+  .aboutHeroStats{
+    display: none;
+  }
 }
